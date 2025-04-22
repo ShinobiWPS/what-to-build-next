@@ -10,7 +10,7 @@ datasource db {
 
 model User {
   id                         String    @id @default(uuid())
-  userKnownStacks            String
+  userKnownStacks            Json       @default("[]")
   followJobMarketSkillsDemand Boolean   @default(false)
   learnNewTech               Boolean   @default(false)
 
@@ -46,8 +46,8 @@ model ProjectListOrderQuery {
   featureWannaBuild           String
   followJobMarketSkillsDemand Boolean
   learnNewTech                Boolean
-  userKnownStacks             String
-  techPreferences             String
+  userKnownStacks             Json  @default("[]")
+  techPreferences             Json @default("[]")
 
   user     User    @relation(fields: [userId], references: [id])
   userId   String
