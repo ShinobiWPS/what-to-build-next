@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                         String    @id @default(uuid())
+  userKnownStacks            String
+  followJobMarketSkillsDemand Boolean   @default(false)
+  learnNewTech               Boolean   @default(false)
+
+  projects                   Project[] @relation("UserProjects")
+  queries                    ProjectListOrderQuery[]
+  shared                     UserSharing[] @relation("UserShares")
+  gaveAccessTo               UserSharing[] @relation("GaveAccess")
+  gotAccessTo                UserSharing[] @relation("GotAccess")
+}
+
+model Project {
+  id        String      @id @default(uuid())
+  title     String
+  type      ProjectType
+  owner     User        @relation("UserProjects", fields: [ownerId], references: [id])
+  ownerId   String
+  priority  Priority?
+}
+
+model TechnologiesPreferences {
+  id          String  @id @default(uuid())
+  description String
+}
+
+model FeaturePreferences {
+  id          String  @id @default(uuid())
+  description String
+}
+
+model ProjectListOrderQuery {
+  id                          String   @id @default(uuid())
+  priority                    Priority
+  featureWannaBuild           String
+  followJobMarketSkillsDemand Boolean
+  learnNewTech                Boolean
+  userKnownStacks             String
+  techPreferences             String
+
+  user     User    @relation(fields: [userId], references: [id])
+  userId   String
+}
+
+model UserSharing {
+  user           User   @relation("UserShares", fields: [userId], references: [id])
+  userId         String
+
+  gaveAccessTo   User   @relation("GaveAccess", fields: [gaveAccessToId], references: [id])
+  gaveAccessToId String   @map("gaveAccessTo")
+
+  gotAccessTo    User   @relation("GotAccess", fields: [gotAccessToId], references: [id])
+  gotAccessToId  String   @map("gotAccessTo")
+
+  @@id([userId, gaveAccessToId, gotAccessToId])
+}
+
+enum ProjectType {
+  personal
+  contribution
+}
+
+enum Priority {
+  profit
+  exposure
+  personal_need
+}

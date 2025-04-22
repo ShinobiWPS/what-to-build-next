@@ -1,0 +1,112 @@
+{
+    "project_list_placeholder": [
+        {
+            "id": "1",
+            "ownerId": "1",
+            "title": "automated script to reorder folders and files on desktop",
+            "type": "personal"
+        },
+        {
+            "id": "2",
+            "ownerId": "1",
+            "title": "contribution to open-source React component library",
+            "type": "contribution"
+        },
+        {
+            "id": "3",
+            "ownerId": "1",
+            "title": "personal portfolio site with Next.js and Tailwind CSS",
+            "type": "personal"
+        },
+        {
+            "id": "4",
+            "ownerId": "1",
+            "title": "mobile app prototype for task management",
+            "type": "personal"
+        },
+        {
+            "id": "5",
+            "ownerId": "1",
+            "title": "3D model viewer integration in Three.js",
+            "type": "contribution"
+        },
+        {
+            "id": "6",
+            "ownerId": "1",
+            "title": "full-stack ecommerce platform with Node.js and React",
+            "type": "contribution"
+        },
+        {
+            "id": "7",
+            "ownerId": "1",
+            "title": "automation script to backup databases nightly",
+            "type": "personal"
+        },
+        {
+            "id": "8",
+            "ownerId": "1",
+            "title": "contribution to Vue.js plugin for form validation",
+            "type": "contribution"
+        },
+        {
+            "id": "9",
+            "ownerId": "1",
+            "title": "personal expense tracker mobile app",
+            "type": "personal"
+        },
+        {
+            "id": "10",
+            "ownerId": "1",
+            "title": "contribution to GraphQL API middleware",
+            "type": "contribution"
+        },
+        {
+            "id": "11",
+            "ownerId": "1",
+            "title": "personal 3D assets generator using Blender Python API",
+            "type": "personal"
+        },
+        {
+            "id": "12",
+            "ownerId": "1",
+            "title": "contribution to CLI utility for CSV parsing",
+            "type": "contribution"
+        },
+        {
+            "id": "13",
+            "ownerId": "1",
+            "title": "personal blog built with Gatsby and Markdown",
+            "type": "personal"
+        },
+        {
+            "id": "14",
+            "ownerId": "1",
+            "title": "contribution to open-source React Native UI library",
+            "type": "contribution"
+        },
+        {
+            "id": "15",
+            "ownerId": "1",
+            "title": "personal CRM platform with Django and React",
+            "type": "personal"
+        },
+        {
+            "id": "16",
+            "ownerId": "1",
+            "title": "contribution to open-source VR scene exporter",
+            "type": "contribution"
+        },
+        {
+            "id": "17",
+            "ownerId": "1",
+            "title": "personal dashboard built with Angular and D3.js",
+            "type": "personal"
+        },
+        {
+            "id": "18",
+            "ownerId": "1",
+            "title": "contribution to Flutter-based chat SDK",
+            "type": "contribution"
+        }
+    ]
+}
