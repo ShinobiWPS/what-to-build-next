@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
+  output   = "../app/generated/prisma/client"
 }
 
 datasource db {
@@ -27,7 +27,6 @@ model Project {
   type      ProjectType
   owner     User        @relation("UserProjects", fields: [ownerId], references: [id])
   ownerId   String
-  priority  Priority?
 }
 
 model TechnologiesPreferences {
