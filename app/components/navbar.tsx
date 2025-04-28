@@ -38,9 +38,16 @@ export function Navbar() {
 						Home
 					</Link>
 				</li>
+				{sessionData && (
+					<li className="">
+						<Link href="/dashboard" className="hover:text-gray-300">
+							Dashboard
+						</Link>
+					</li>
+				)}
 				<li className="">
-					<Link href="/dashboard" className="hover:text-gray-300">
-						Dashboard
+					<Link href="/about" className="hover:text-gray-300">
+						About
 					</Link>
 				</li>
 			</ul>
