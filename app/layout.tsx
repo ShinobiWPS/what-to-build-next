@@ -1,4 +1,5 @@
 import { Navbar } from '@/app/components/navbar'
+import { authOptions } from '@/app/lib/auth-options'
 import SessionProvider from '@/app/session-provider'
 import type { Metadata } from 'next'
 import { getServerSession } from 'next-auth'
@@ -8,7 +9,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-	title: 'What to Build Next',
+	title: 'What to build Next',
 	description: 'Decide your next project',
 }
 
@@ -17,7 +18,7 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
-	const serverSession = await getServerSession()
+	const serverSession = await getServerSession(authOptions)
 
 	return (
 		<html lang="en">

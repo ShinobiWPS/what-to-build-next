@@ -17,6 +17,15 @@ export const authOptions: NextAuthOptions = {
 		}),
 	],
 	session: { strategy: 'jwt' },
+	callbacks: {
+		async session({ session, token }) {
+			// Attach the user id from the token to the session
+			if (session.user && token?.sub) {
+				session.user.id = token.sub
+			}
+			return session
+		},
+	},
 
 	debug: process.env.NODE_ENV === 'development',
 }

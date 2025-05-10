@@ -21,7 +21,6 @@ export function Navbar() {
 	} else {
 		logButton = (
 			<>
-				{' '}
 				<button onClick={() => signIn()}>
 					<b>login</b>
 				</button>

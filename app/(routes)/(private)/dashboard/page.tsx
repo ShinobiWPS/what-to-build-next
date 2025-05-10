@@ -5,12 +5,9 @@ import { getServerSession } from 'next-auth/next'
 export default async function DashboardPage() {
 	const session = await getServerSession(authOptions)
 
-	// We don't need to check for session here since the layout handles protection
-
-	// Optionally load user data
 	const userData = session?.user?.id
 		? await prisma.user.findUnique({
-				where: { id: session.user.id.toString() },
+				where: { id: session.user.id },
 				include: { projects: true },
 		  })
 		: null
